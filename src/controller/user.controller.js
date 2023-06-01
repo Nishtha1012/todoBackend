@@ -40,7 +40,9 @@ const userLogin = async (req, res) => {
             let result = await checkLoginUSer(email, password)
             console.log("done");
             let cookieConfig = {
-                httpOnly: true
+                httpOnly: true,
+                SameSite:'none',
+                secure:true
             }
             console.log('loginresult', result);
 
