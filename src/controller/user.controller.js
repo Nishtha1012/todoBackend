@@ -41,7 +41,7 @@ const userLogin = async (req, res) => {
             console.log("done");
             let cookieConfig = {
                 httpOnly: true,
-                SameSite:"none"
+                sameSite:"none"
             }
             console.log('loginresult', result);
 
