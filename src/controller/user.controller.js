@@ -87,7 +87,12 @@ const userVerify = async (req, res) => {
 
 //removes the cookie when user logout
 const userlogout = async (req, res) => {
-    res.clearCookie("token");
+     let cookieConfig = {
+                httpOnly: true,
+                sameSite:"none",
+                secure:true
+            }
+    res.clearCookie("token",cookieConfig);
     res.status(200).json({ success: true });
 }
 
